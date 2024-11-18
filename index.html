@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Convert Case Tool</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- Use Vue 3 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.5.13/dist/vue.global.js"></script>
     <style>
       * {
         margin: 0;
@@ -98,11 +99,13 @@
     </div>
 
     <script>
-      new Vue({
-        el: "#app",
-        data: {
-          inputText: "",
-          outputText: "",
+      // Create the Vue app using Vue 3
+      const app = Vue.createApp({
+        data() {
+          return {
+            inputText: "",
+            outputText: "",
+          };
         },
         methods: {
           convertToCase(type) {
@@ -172,6 +175,9 @@
           },
         },
       });
+
+      // Mount the Vue app to the DOM
+      app.mount("#app");
     </script>
   </body>
 </html>
